@@ -279,3 +279,9 @@ SUPPLY_SERVICE_AZURE/Properties/launchSettings.json
 *.vscode
 BOT_FRAMEWORK_CONNECTOR_V5/Properties/ServiceDependencies
 MESSAGES_BROKER_BOT_CORE_V5/Properties/ServiceDependencies
+CasosUsoLynn/bin
+CasosUsoLynn/obj
+DemoLynn/bin
+DemoLynn/obj
+CasosUsoLynn/bin
+CasosUsoLynn/obj
