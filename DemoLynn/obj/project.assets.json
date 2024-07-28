@@ -9468,11 +9468,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\breyes\\source\\repos\\DemoLynn\\DemoLynn.csproj",
+      "projectUniqueName": "C:\\GitHub\\demo-lynn\\DemoLynn\\DemoLynn.csproj",
       "projectName": "DemoLynn",
-      "projectPath": "C:\\Users\\breyes\\source\\repos\\DemoLynn\\DemoLynn.csproj",
+      "projectPath": "C:\\GitHub\\demo-lynn\\DemoLynn\\DemoLynn.csproj",
       "packagesPath": "C:\\Users\\breyes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\breyes\\source\\repos\\DemoLynn\\obj\\",
+      "outputPath": "C:\\GitHub\\demo-lynn\\DemoLynn\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
