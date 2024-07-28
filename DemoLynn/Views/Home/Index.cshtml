@@ -94,8 +94,8 @@
                 bodyTemplate: kendo.template($("#bounce-rate").html())
             }], //My changes
             columns: 4,
-            columnsWidth: 300,
-            rowsHeight: 235,
+            columnsWidth: getWidth(),
+            rowsHeight: getHeight(),
             reorderable: true,
             resizable: true,
             resize: function (e) {
@@ -323,6 +323,24 @@
 
         // $(document).ready(createCharts);
         $(document).bind("kendo:skinChange", createCharts);
+
+        function getHeight() {
+            const height = $(window).innerHeight() / 40;
+            if (height < 23) {
+                return 23;
+            } else {
+                return height;
+            }
+        }
+
+        function getWidth() {
+            const width = $(window).innerWidth();
+            if (width < 23) {
+                return 23;
+            } else {
+                return width;
+            }
+        }
 
         //Para Drop Down list
         $(document).ready(function () {
