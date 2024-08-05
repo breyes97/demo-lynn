@@ -3,6 +3,12 @@
 }
 
 <style>
+    #example{
+        display: flex;
+        align-items: center; /* Alinea verticalmente */
+        justify-content: center;
+    }
+
     .k-card {
         border-color: white;
     }
@@ -64,9 +70,10 @@
     }
 
     .k-d-flex {
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
+       height: 100vh;
+/*        display: flex; */
+       justify-content: center;
+       align-items: center;
     }
 
 
@@ -146,8 +153,8 @@
         right: 12px;
     }
 
-    .close-image:hover,
-    .close-image:focus {
+    #for-close:hover,
+    #for-close:focus {
         color: #bbb;
         text-decoration: none;
         cursor: pointer;
@@ -159,36 +166,38 @@
         z-index: 6;
     }
 
-/*     .modal-interface {
+    .modal-interface {
+        visibility: hidden;
+        position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
-        position: fixed;
-        z-index: 1;
-        top: 50%;
-        left: 25%;
-        background-color: rgba(0, 0, 0, 0.7);
-        height: 60%;
-        width: 50%;
-        }*/
-
-
-    .modal-interface{
-        visibility: hidden;
-    } 
-    .modal-interface{
-        position: relative;
     }
 
+    #for-close{
+        position:absolute;
+        height: 5%;
+        top: 0%;
+        right: 5%;
+        z-index: 10;
+    }
+
+/*     #lynn-icon{
+        display: none;
+    } */
+
     .ex-interface-image {
-        position: absolute;
-        z-index: 4;
-        top: 50%;
-        left: 50%;
-        padding: 1em;
-        border-radius: 3%;
-        top: 50%;
-        left: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 7;
+        border-radius: 2%;
+        border: 3px;
+        border-style: solid;
+        border-color: black;
+        height: 85%;
+        width:85%
     }
 
     .black-out{
@@ -202,8 +211,8 @@
     .sending-video{
         display: none;
         position: absolute;
-        height: 679px;
-        width: 338px;
+        height: 675px;
+        width: 340px;
         border-radius: 12%;
         z-index: 3;
     }
@@ -212,22 +221,30 @@
         display: none;
         position: absolute;
         height: 679px;
-        width: 338px;
+        width: 335px;
         border-radius: 12%;
         z-index: 2;
     }
 
-
+    p{
+        display: none;
+        background-color: #d7d7d7;
+        color: black;
+        font-size: 130%;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 6%;
+        padding:4%;
+    }
 
 </style>
 
 
 
 <div id="example">
-        <div class="modal-interface">
-            <image class="ex-interface-image" src="images/Interface.png"/>
-        <span class="close-image" id="for-close"><img src="images/close.png" style="height: 70px;" /></span>
-        </div>
+    <div class="modal-interface" id="modal-kyubo">
+        <image class="ex-interface-image" id="kyubo-image" src="images/casos_de_uso/gmail-kyubo/gmail-kyubo_2.png"/>
+        <img src="images/close-2.png" id="for-close"/>
+    </div>
 
     <div id="tilelayout"></div>
     <!-- container text templates -->
@@ -239,13 +256,14 @@
     <script id="mobile-interface" type="text/x-kendo-template">
         <div id="forImage" style="height:100%" >
             <div class="black-out"></div>
-            <video class="sending-video" id="sending-mail-video" src="images/casos_de_uso/gmail-kyubo/sending_email_all_the_video.mp4" frameborder="0"></video>
+            <video class="sending-video" id="sending-mail-video" src="images/casos_de_uso/gmail-kyubo/demokyuboshort.mp4" frameborder="0"></video>
             <img src="images/casos_de_uso/gmail-kyubo/gmail-inbox.png" id="gmailInbox"/>
             <img src="images/iphone-bg.png" id="phoneImage" style="height:100%"/>
         </div>
     </script>   
     <script id="loading-section" type="text/x-kendo-template">
         <div class="k-d-flex">
+            <img src="images/lynnicons-2024/lynnicons/svg-icons/lynn.svg" style="height:25%" id="lynn-icon" alt="lynn"/>
             <div class="example-item">
                 <div>Loading</div>
                 <div id="loader-secondary"></div>
@@ -264,7 +282,14 @@
         </div>
     </script>
     <script id="view-messages-section" type="text/x-kendo-template">
-        <div id="users-grid" style="height:100%;"></div>
+        <div id="users-grid" style="height:100%;">
+        <p><b>Respuesta del ejecutivo</b><br><br>
+            Hola Pablo,<br><br>
+           Hemos revisado su plan y puede elegir cualquiera de los equipos disponibles en nuestra tienda y le ofrecemos un descuento del 10%.<br><br>
+           Estaremos atentos a su consulta.<br><br>
+           Gracias por preferir nuestros servicios.
+        </p>
+        </div>
     </script>
     <script id="use-cases" type="text/x-kendo-template">
         <div>
@@ -323,38 +348,9 @@
             columns: 5,
             columnsWidth: getWidth(),
             rowsHeight: 235,
-            // reorderable: true,
-            // resizable: true,
-            // resize: function (e) {
-            //     var rowSpan = e.container.css("grid-column-end");
-            //     var chart = e.container.find(".k-chart").data("kendoChart");
-            //     // hide chart labels when the space is limited
-            //     if (rowSpan === "span 1" && chart) {
-            //         chart.options.categoryAxis.labels.visible = false;
-            //         chart.redraw();
-            //     }
-            //     // show chart labels when the space is enough
-            //     if (rowSpan !== "span 1" && chart) {
-            //         chart.options.categoryAxis.labels.visible = true;
-            //         chart.redraw();
-            //     }
 
-            //     // for widgets that do not auto resize
-            //     https://docs.telerik.com/kendo-ui/styles-and-layout/using-kendo-in-responsive-web-pages
-            //     kendo.resize(e.container, true);
-            // }
         });
 
-        // $("#dropdownlist").kendoDropDownList({
-        //     fillMode: "outline"
-        //     popup: {
-        //         appendTo: $("#container"), // Adjunta el popup a un elemento específico
-
-        // });
-        // function createCharts() {
-        // };
-
-        // $(document).bind("kendo:skinChange", createCharts);
 
 
         function getWidth() {
@@ -368,96 +364,60 @@
 
         document.getElementById("gmail-btn").onclick = function () {
             $('#case1').show();
-            $('#gmailInbox').show();
 
         };
 
+        //--------------PARA MODAL-------------
 
-
-        // document.getElementById("case2").onclick = function () {
-        //     $('.example-item, #kyubo-btn').show();
-        // };
-
-        // document.getElementById("case3").onclick = function () {
-        //     $('.example-item, #kyubo-btn').show();
-        // };
-
-        // var image = document.getElementById("#gmailInbox");
-        // var button = document.getElementById("#gmail-btn");
-
-        // button.onclick = function () {
-        //     image.style.visibility = "visible";
-
-        // }
-
-
-        var modal = document.getElementById("ex-interface");
+        var modal = document.getElementById("modal-kyubo");
         var btn = document.getElementById("kyubo-btn");
         var cls = document.getElementById("for-close");
+        // var main = document.getElementById("example");
 
 
         btn.onclick = function () {
-            modal.style.visibility = "visible";
+            modal.style.visibility = "visible"; 
         }
 
 
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.visibility = "hidden";
-            }
-        }
+        // window.onclick = function (event) {
+        //     if (event.target == main) {
+        //         modal.style.visibility = "hidden";
+        //     }
+        // }
 
         cls.onclick = function () {
             modal.style.visibility = "hidden";
-
         }
 
 
         //---------PARA EL VIDEO-------------
+        // var startTime = 2; 
+        // var video = document.getElementById('sending-mail-video');
 
-        // Tiempo en segundos desde el cual se desea iniciar la reproducción
-
-
-        // Cuando el video esté listo para reproducirse, establece el tiempo de inicio
-
-
-        // Opcional: Reproduce automáticamente el video desde el punto especificado
-        // video.addEventListener('canplay', function () {
-        //     video.play();
+        // video.addEventListener('loadedmetadata', function () {
+        //     video.currentTime = startTime;
         // }, false);
-        var startTime = 2; // 60 segundos = 1 minuto
-        var video = document.getElementById('sending-mail-video');
-
-        video.addEventListener('loadedmetadata', function () {
-            video.currentTime = startTime;
-        }, false);
 
         document.getElementById("case1").onclick = function () {
-            $('.example-item, #kyubo-btn').show();
+            $('#lynn-icon').hide();
+            setTimeout(function () {
+                $('#kyubo-btn').show();
+                $('#lynn-icon').show();
+                $("p").show();
+
+            }, 7000);
+
             $('#gmailInbox').hide();
             $('.sending-video').show();
             $('.sending-video').each(function () {
                 var video = this;
                 video.play();
-
-                // Pausar el video después de 5 segundos de reproducción
-                setTimeout(function () {
-                    video.pause();
-
-                    // Reanudar el video después de 5 segundos de pausa
-                    setTimeout(function () {
-                        video.play();
-                    }, 5000); // 5000 milisegundos = 5 segundos
-                }, 5); // 5000 milisegundos = 5 segundos
             });
-
-            var pauseTime = 2; // 60 segundos = 1 minuto
-            var video = document.getElementById('sending-mail-video');
-
-            video.addEventListener('loadedmetadata', function () {
-                video.currentTime = startTime;
-            }, false);
-
+            $('.example-item').show();
+            setTimeout(function () {
+                $('.example-item').hide();
+            }, 7000); 
 
         };
 
@@ -492,8 +452,6 @@
                 dataSource: dataSource,
                 select: onSelect
             });
-
-
 
         });
         // PAra el loading
