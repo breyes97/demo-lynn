@@ -1,0 +1,532 @@
+@font-face {
+  font-family: 'lynnfont';
+  src:  url('fonts/lynnfont.eot?f2id0w');
+  src:  url('fonts/lynnfont.eot?f2id0w#iefix') format('embedded-opentype'),
+    url('fonts/lynnfont.ttf?f2id0w') format('truetype'),
+    url('fonts/lynnfont.woff?f2id0w') format('woff'),
+    url('fonts/lynnfont.svg?f2id0w#lynnfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ln {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'lynnfont' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+}
+
+.ln.xs {
+  font-size: 10px;
+}
+.ln.sm {
+  font-size: 15px;
+}
+.ln.lg {
+  font-size: 25px;
+}
+.ln.xl {
+  font-size: 30px;
+}
+.ln.xxl {
+  font-size: 40px;
+}
+
+/*
+.ln-warning-triangle:before {
+  color: #f8981d;
+}
+.ln-warning-triangle::after {
+  color: #fff;
+  margin-left: -1em;
+}
+*/
+/* ---- */
+.ln-active:before {
+  content: "\e900";
+}
+.ln-add:before {
+  content: "\e901";
+}
+.ln-add-circle:before {
+  content: "\e902";
+}
+.ln-alert:before {
+  content: "\e903";
+}
+.ln-alert-solid:before {
+  content: "\e904";
+}
+.ln-api:before {
+  content: "\e905";
+}
+.ln-arroba:before {
+  content: "\e906";
+}
+.ln-back:before {
+  content: "\e907";
+}
+.ln-back-circle:before {
+  content: "\e908";
+}
+.ln-block:before {
+  content: "\e909";
+}
+.ln-boolean:before {
+  content: "\e90a";
+}
+.ln-bot:before {
+  content: "\e90b";
+}
+.ln-brush:before {
+  content: "\e90c";
+}
+.ln-bubble:before {
+  content: "\e90d";
+}
+.ln-bubble-solid:before {
+  content: "\e90e";
+}
+.ln-call-end:before {
+  content: "\e90f";
+}
+.ln-call-take:before {
+  content: "\e910";
+}
+.ln-call-transfer:before {
+  content: "\e911";
+}
+.ln-caret-down:before {
+  content: "\e912";
+}
+.ln-caret-up:before {
+  content: "\e913";
+}
+.ln-case:before {
+  content: "\e914";
+}
+.ln-change:before {
+  content: "\e915";
+}
+.ln-chat:before {
+  content: "\e916";
+}
+.ln-chat-info:before {
+  content: "\e917";
+}
+.ln-check:before {
+  content: "\e918";
+}
+.ln-check-circle:before {
+  content: "\e919";
+}
+.ln-chevron-down:before {
+  content: "\e91a";
+}
+.ln-chevron-up:before {
+  content: "\e91b";
+}
+.ln-clear:before {
+  content: "\e91c";
+}
+.ln-client-identification:before {
+  content: "\e91d";
+}
+.ln-cog:before {
+  content: "\e91e";
+}
+.ln-cognitive:before {
+  content: "\e91f";
+}
+.ln-cognitive-error:before {
+  content: "\e920";
+}
+.ln-cognitive-head:before {
+  content: "\e921";
+}
+.ln-cogs:before {
+  content: "\e922";
+}
+.ln-cog-two:before {
+  content: "\e923";
+}
+.ln-conditional:before {
+  content: "\e924";
+}
+.ln-config-channel:before {
+  content: "\e925";
+}
+.ln-config-queue:before {
+  content: "\e926";
+}
+.ln-contact:before {
+  content: "\e927";
+}
+.ln-copilot:before {
+  content: "\e928";
+}
+.ln-copy:before {
+  content: "\e929";
+}
+.ln-cors:before {
+  content: "\e92a";
+}
+.ln-cross:before {
+  content: "\e92b";
+}
+.ln-cross-solid:before {
+  content: "\e92d";
+}
+.ln-dashboard:before {
+  content: "\e92e";
+}
+.ln-debug:before {
+  content: "\e92f";
+}
+.ln-deflection:before {
+  content: "\e930";
+}
+.ln-delete-all:before {
+  content: "\e931";
+}
+.ln-delete-connect:before {
+  content: "\e932";
+}
+.ln-delete-queue:before {
+  content: "\e933";
+}
+.ln-dialog:before {
+  content: "\e934";
+}
+.ln-division:before {
+  content: "\e935";
+}
+.ln-doc:before {
+  content: "\e936";
+}
+.ln-doc-check:before {
+  content: "\e937";
+}
+.ln-doc-excel:before {
+  content: "\e938";
+}
+.ln-down:before {
+  content: "\e939";
+}
+.ln-download:before {
+  content: "\e93a";
+}
+.ln-edit:before {
+  content: "\e93b";
+}
+.ln-edit-doc:before {
+  content: "\e93c";
+}
+.ln-edit-new:before {
+  content: "\e93d";
+}
+.ln-element:before {
+  content: "\e93e";
+}
+.ln-entity:before {
+  content: "\e93f";
+}
+.ln-error:before {
+  content: "\e940";
+}
+.ln-exit:before {
+  content: "\e941";
+}
+.ln-external-link:before {
+  content: "\e942";
+}
+.ln-file:before {
+  content: "\e943";
+}
+.ln-filter:before {
+  content: "\e944";
+}
+.ln-filter-clear:before {
+  content: "\e945";
+}
+.ln-focus:before {
+  content: "\e946";
+}
+.ln-force-intent:before {
+  content: "\e947";
+}
+.ln-form:before {
+  content: "\e948";
+}
+.ln-graph:before {
+  content: "\e949";
+}
+.ln-graph-config:before {
+  content: "\e94a";
+}
+.ln-graph-dashboard:before {
+  content: "\e94b";
+}
+.ln-gui:before {
+  content: "\e94c";
+}
+.ln-headphone:before {
+  content: "\e94d";
+}
+.ln-home:before {
+  content: "\e94e";
+}
+.ln-import:before {
+  content: "\e94f";
+}
+.ln-info:before {
+  content: "\e950";
+}
+.ln-info-solid:before {
+  content: "\e951";
+}
+.ln-input-in:before {
+  content: "\e952";
+}
+.ln-input-in-out:before {
+  content: "\e953";
+}
+.ln-input-out:before {
+  content: "\e954";
+}
+.ln-integer:before {
+  content: "\e955";
+}
+.ln-intent:before {
+  content: "\e956";
+}
+.ln-intent-solid:before {
+  content: "\e957";
+}
+.ln-javascript:before {
+  content: "\e958";
+}
+.ln-kyubo:before {
+  content: "\e959";
+}
+.ln-lightbulb:before {
+  content: "\e95a";
+}
+.ln-load-balance:before {
+  content: "\e95b";
+}
+.ln-low-confidence:before {
+  content: "\e95c";
+}
+.ln-lynn:before {
+  content: "\e95d";
+}
+.ln-maintenance:before {
+  content: "\e95e";
+}
+.ln-map:before {
+  content: "\e95f";
+}
+.ln-medal:before {
+  content: "\e960";
+}
+.ln-message:before {
+  content: "\e961";
+}
+.ln-money:before {
+  content: "\e962";
+}
+.ln-monitor-call:before {
+  content: "\e963";
+}
+.ln-monitor-end:before {
+  content: "\e964";
+}
+.ln-monitor-start:before {
+  content: "\e965";
+}
+.ln-move-all:before {
+  content: "\e966";
+}
+.ln-non-cognitive:before {
+  content: "\e967";
+}
+.ln-note:before {
+  content: "\e968";
+}
+.ln-not-found:before {
+  content: "\e969";
+}
+.ln-order:before {
+  content: "\e96a";
+}
+.ln-outbound:before {
+  content: "\e96b";
+}
+.ln-palette:before {
+  content: "\e96c";
+}
+.ln-panel:before {
+  content: "\e96d";
+}
+.ln-pap:before {
+  content: "\e96e";
+}
+.ln-pap-plus:before {
+  content: "\e96f";
+}
+.ln-paste:before {
+  content: "\e970";
+}
+.ln-play:before {
+  content: "\e971";
+}
+.ln-plug:before {
+  content: "\e972";
+}
+.ln-point:before {
+  content: "\e973";
+  color: #e61e25;
+}
+.ln-predefined-answer:before {
+  content: "\e974";
+}
+.ln-puzle:before {
+  content: "\e975";
+}
+.ln-queue:before {
+  content: "\e976";
+}
+.ln-quote:before {
+  content: "\e977";
+}
+.ln-refresh:before {
+  content: "\e978";
+}
+.ln-reload:before {
+  content: "\e979";
+}
+.ln-reloaded:before {
+  content: "\e97a";
+}
+.ln-route:before {
+  content: "\e97b";
+}
+.ln-search:before {
+  content: "\e97c";
+}
+.ln-send:before {
+  content: "\e97d";
+}
+.ln-send-all:before {
+  content: "\e97e";
+}
+.ln-steps:before {
+  content: "\e97f";
+}
+.ln-stop:before {
+  content: "\e980";
+}
+.ln-string:before {
+  content: "\e981";
+}
+.ln-success:before {
+  content: "\e982";
+}
+.ln-tenant:before {
+  content: "\e983";
+}
+.ln-timeline:before {
+  content: "\e984";
+}
+.ln-time-line:before {
+  content: "\e985";
+}
+.ln-trash:before {
+  content: "\e986";
+}
+.ln-trash-undo:before {
+  content: "\e987";
+}
+.ln-tree-estructure:before {
+  content: "\e988";
+}
+.ln-unplug:before {
+  content: "\e989";
+}
+.ln-up:before {
+  content: "\e98a";
+}
+.ln-upload:before {
+  content: "\e98b";
+}
+.ln-user-check:before {
+  content: "\e98c";
+}
+.ln-user-cog:before {
+  content: "\e98d";
+}
+.ln-user-entity:before {
+  content: "\e98e";
+}
+.ln-user-group:before {
+  content: "\e98f";
+}
+.ln-user-info:before {
+  content: "\e990";
+}
+.ln-user-plus:before {
+  content: "\e991";
+}
+.ln-user-profile:before {
+  content: "\e992";
+}
+.ln-users:before {
+  content: "\e993";
+}
+.ln-users-cog:before {
+  content: "\e994";
+}
+.ln-variable:before {
+  content: "\e995";
+}
+.ln-video:before {
+  content: "\e996";
+}
+.ln-voice:before {
+  content: "\e997";
+}
+.ln-wait:before {
+  content: "\e998";
+}
+.ln-wait-cogs:before {
+  content: "\e999";
+}
+.ln-waiting:before {
+  content: "\e99a";
+}
+.ln-warning:before {
+  content: "\e99b";
+}
+.ln-warning-triangle:before {
+  content: "\e99c";
+  color: #f8981d;
+}
+.ln-warning-triangle:after {
+  content: "\e99d";
+  color: #fff;
+  margin-left: -1em;
+}
+.ln-webredirect:before {
+  content: "\e99e";
+}

@@ -1,9 +1,12 @@
 using DemoLynn.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
+
 
 namespace DemoLynn.Controllers
 {
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -15,6 +18,15 @@ namespace DemoLynn.Controllers
 
         public IActionResult Index()
         {
+            Dictionary<int, string> typeOfService = new Dictionary<int, string>()
+            {
+                { 1, "Telefonía Móvil" },
+                
+            };
+
+            SelectList selTypeOfService = new SelectList(typeOfService, "Key", "Value");
+            ViewBag.TypeOfService = selTypeOfService;
+
             return View();
         }
 

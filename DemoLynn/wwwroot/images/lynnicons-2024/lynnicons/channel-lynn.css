@@ -1,0 +1,556 @@
+/* -------------------- */
+/* Lynn */
+.ln-icon {
+    position: relative;
+    display: inline-flex;
+    text-indent: -9999px;
+    width: 18px;
+    height: 18px;
+}
+.ln-icon:before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+}
+.ln-icon.lynn {
+    width: 40px;
+    height: 15px;
+}
+.ln-icon.lynn:before {
+    width: 40px;
+    height: 15px;
+    background: url("./lynn-white.svg") no-repeat 0 0;
+    background-size: contain;
+}
+.ln-icon.lea:before {
+    background: url("./svg-channel/lea-icon.svg") no-repeat 0 0;
+}
+.ln-icon.kyubo:before {
+    background: url("./svg-channel/kyubo.svg") no-repeat 0 0;
+}
+.ln-icon.lock-user:before {
+    background: url("./svg-channel/lock-user.svg") no-repeat 0 0;
+}
+.ln-icon.lock-env:before {
+    background: url("./svg-channel/lock-env.svg") no-repeat 0 0;
+}
+.ln-icon.switch-env:before {
+    background: url("./svg-channel/switch-env.svg") no-repeat 0 0;
+}
+.ln-icon.ln-genesys:before {
+    background: url("./svg-channel/genesys-cloud.svg") no-repeat 0 0;
+    background-size: contain;
+}
+.ln-genesys.ctx-1:before {
+    background: url("./svg-channel/genesys-cloud.svg") no-repeat 0 0;
+}
+.ln-genesys.ctx-2:before {
+    background: url("./svg-channel/genesys-cloud.svg") no-repeat 0 0;
+}
+
+/* otbound */
+.outbound-icon {
+    position: relative;
+    display: inline-flex;
+    text-indent: -9999px;
+    width: 30px;
+    height: 30px;
+    filter: opacity(0.65);
+}
+.outbound-icon:before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+}
+.outbound-icon.template:before {
+    background: url("./svg-channel/template-circle.svg") no-repeat 0 0;
+}
+
+/*
+.ln-genesys {
+    position: relative;
+    display: inline-block;
+    text-indent: -9999px;
+    width: 20px;
+    height: 20px;
+}
+.ln-genesys:before {
+    content: "";
+    display: block;
+    background-size: contain;
+}
+.ln-genesys.sm {
+    width: 90px;
+    height: 13px;
+}
+.ln-genesys.sm:before {
+    width: 90px;
+    height: 13px;
+}
+*/
+/* Lynn Icons Size */
+.ln-icon.sm, .ln-icon.sm:before {
+    width: 25px;
+    height: 25px;
+}
+.ln-icon.lg, .ln-icon.lg:before {
+    width: 30px;
+    height: 30px;
+}
+
+/* -------------------- */
+/* Channels */
+.ln-channel {
+  position: relative;
+  display: inline-flex;
+  text-indent: -9999px;
+  width: 30px;
+  height: 30px;
+}
+.ln-channel:before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+}
+.ln-channel.ch-whatsapp:before,
+.ln-channel.ch-WhatsApp:before,
+.ln-channel.ch-1:before {
+  background: url("./svg-channel/whatsapp.svg") no-repeat 0 0;
+}
+.ln-channel.ch-facebookmessenger:before,
+.ln-channel.ch-FacebookMessenger:before,
+.ln-channel.ch-2:before {
+  background: url("./svg-channel/facebook-messenger.svg") no-repeat 0 0;
+}
+.ln-channel.ch-teams:before,
+.ln-channel.ch-Teams:before,
+.ln-channel.ch-3:before {
+  background: url("./svg-channel/teams.svg") no-repeat 0 0;
+}
+.ln-channel.ch-skype:before,
+.ln-channel.ch-Skype:before,
+.ln-channel.ch-4:before {
+  background: url("./svg-channel/skype.svg") no-repeat 0 0;
+}
+.ln-channel.ch-sms:before,
+.ln-channel.ch-Sms:before,
+.ln-channel.ch-5:before {
+  background: url("./svg-channel/sms.svg") no-repeat 0 0;
+}
+.ln-channel.ch-slack:before,
+.ln-channel.ch-Slack:before,
+.ln-channel.ch-6:before {
+  background: url("./svg-channel/slack.svg") no-repeat 0 0;
+}
+.ln-channel.ch-directlyne:before,
+.ln-channel.ch-DirectLyne:before,
+.ln-channel.ch-7:before {
+  background: url("./svg-channel/directline.svg") no-repeat 0 0;
+}
+.ln-channel.ch-twitterdirect:before,
+.ln-channel.ch-TwitterDirect:before,
+.ln-channel.ch-8:before {
+  background: url("./svg-channel/x-md.svg") no-repeat 0 0;
+}
+.ln-channel.ch-twittermention:before,
+.ln-channel.ch-TwitterMention:before,
+.ln-channel.ch-9:before {
+  background: url("./svg-channel/x.svg") no-repeat 0 0;
+}
+.ln-channel.ch-facebookmention:before,
+.ln-channel.ch-FacebookMention:before,
+.ln-channel.ch-10:before {
+  background: url("./svg-channel/facebook-mention.svg") no-repeat 0 0;
+}
+.ln-channel.ch-facebookcomments:before,
+.ln-channel.ch-FacebookComments:before,
+.ln-channel.ch-10:before {
+  background: url("./svg-channel/facebook-mention.svg") no-repeat 0 0;
+}
+.ln-channel.ch-directlinespeech:before,
+.ln-channel.ch-DirectLineSpeech:before,
+.ln-channel.ch-11:before {
+  background: url("./svg-channel/directline-speeach.svg") no-repeat 0 0;
+}
+.ln-channel.ch-email:before,
+.ln-channel.ch-Email:before,
+.ln-channel.ch-12:before {
+  background: url("./svg-channel/mail.svg") no-repeat 0 0;
+}
+.ln-channel.ch-groupme:before,
+.ln-channel.ch-GroupMe:before,
+.ln-channel.ch-13:before {
+  background: url("./svg-channel/groupme.svg") no-repeat 0 0;
+}
+.ln-channel.ch-kik:before,
+.ln-channel.ch-Kik:before,
+.ln-channel.ch-14:before {
+  background: url("./svg-channel/kik-short.svg") no-repeat 0 0;
+}
+.ln-channel.ch-line:before,
+.ln-channel.ch-Line:before,
+.ln-channel.ch-15:before {
+  background: url("./svg-channel/line.svg") no-repeat 0 0;
+}
+.ln-channel.ch-telegram:before,
+.ln-channel.ch-Telegram:before,
+.ln-channel.ch-16:before {
+  background: url("./svg-channel/telegram.svg") no-repeat 0 0;
+}
+.ln-channel.ch-cortana:before,
+.ln-channel.ch-Cortana:before,
+.ln-channel.ch-17:before {
+  background: url("./svg-channel/cortana.svg") no-repeat 0 0;
+}
+.ln-channel.ch-skype:before,
+.ln-channel.ch-SkypeVoice:before,
+.ln-channel.ch-18:before {
+  background: url("./svg-channel/skype.svg") no-repeat 0 0;
+}
+.ln-channel.ch-emulator:before,
+.ln-channel.ch-Emulator:before,
+.ln-channel.ch-19:before {
+  background: url("./svg-channel/emulator.svg") no-repeat 0 0;
+  filter: none !important;
+}
+.ln-channel.ch-chat:before,
+.ln-channel.ch-Chat:before,
+.ln-channel.ch-20:before {
+  background: url("./svg-channel/chat.svg") no-repeat 0 0;
+}
+.ln-channel.ch-unknown:before,
+.ln-channel.ch-UNKNOWN:before,
+.ln-channel.ch-21:before {
+  background: url("./svg-channel/unknown.svg") no-repeat 0 0;
+}
+.ln-channel.ch-instagramcomments:before,
+.ln-channel.ch-InstagramComments:before,
+.ln-channel.ch-22:before {
+  background: url("./svg-channel/instagram.svg") no-repeat 0 0;
+}
+.ln-channel.ch-instagramdirect:before,
+.ln-channel.ch-InstagramDirect:before,
+.ln-channel.ch-23:before {
+  background: url("./svg-channel/instagram-messenger.svg") no-repeat 0 0;
+}
+.ln-channel.ch-facebookworkplacecomments:before,
+.ln-channel.ch-FacebookWorkplaceComments:before,
+.ln-channel.ch-24:before {
+  background: url("./svg-channel/facebook-workplace.svg") no-repeat 0 0;
+}
+.ln-channel.ch-voiceexternalprovider:before,
+.ln-channel.ch-VoiceExternalProvider:before,
+.ln-channel.ch-25:before {
+  background: url("./svg-channel/voice.svg") no-repeat 0 0;
+}
+.ln-channel.ch-25-LYNN:before {
+    background: url("./svg-channel/voice.svg") no-repeat 0 0;
+}
+.ln-channel.ch-25-LVG:before {
+    background: url("./svg-channel/voice-h2.svg") no-repeat 0 0;
+}
+.ln-channel.ch-voiceinternalprovider:before,
+.ln-channel.ch-VoiceInternalProvider:before,
+.ln-channel.ch-26:before {
+  background: url("./svg-channel/voice.svg") no-repeat 0 0;
+}
+.ln-channel.ch-gmail:before,
+.ln-channel.ch-Gmail:before,
+.ln-channel.ch-28:before {
+    background: url("./svg-channel/gmail.svg") no-repeat 0 0;
+}
+.ln-channel.ch-googlebusinesscommunications:before,
+.ln-channel.ch-GoogleBusinessCommunications:before,
+.ln-channel.ch-29:before {
+    background: url("./svg-channel/google-bussinnes.svg") no-repeat 0 0;
+}
+.ln-channel.ch-applebusinesscomunications:before,
+.ln-channel.ch-AppleBusinessComunications:before,
+.ln-channel.ch-30:before {
+    background: url("./svg-channel/apple-business.svg") no-repeat 0 0;
+}
+
+.ln-channel.MailMicrosoft365:before,
+.ln-channel.MailMicrosoft365:before,
+.ln-channel.ch-31:before {
+        background: url("./svg-channel/ms-365.svg") no-repeat 0 0;
+}
+
+
+.ln-channel.googleplay:before,
+.ln-channel.GooglePlay:before,
+.ln-channel.ch-33:before {
+    background: url("./svg-channel/googleplay.svg") no-repeat 0 0;
+}
+
+.ln-channel.linkedin:before,
+.ln-channel.LinkedIn:before,
+.ln-channel.ch-32:before {
+    background: url("./svg-channel/linkedin.svg") no-repeat 0 0;
+}
+
+    ln-channel.GenesysCloudWidget:before,
+    .ln-channel.genesyscloudwidget:before,
+    .ln-channel.ch-34:before {
+        background: url("./svg-channel/genesys-cloud.svg") no-repeat 0 0;
+    }
+
+
+/* Subcategoria Canales */
+.ln-channel.ch-1-TWILIO:before {
+  background: url("./svg-channel/twilio.svg") no-repeat 0 0;
+}
+.ln-channel.ch-1-NEXMO:before {
+  background: url("./svg-channel/vonage.svg") no-repeat 0 0;
+}
+.ln-channel.ch-1-INFOBIP:before {
+  background: url("./svg-channel/infobip.svg") no-repeat 0 0;
+}
+.ln-channel.ch-1-WABIZ:before {
+  background: url("./svg-channel/wabiz.svg") no-repeat 0 0;
+}
+.ln-channel.ch-1-ONEMARKETER:before {
+  background: url("./svg-channel/masivian.svg") no-repeat 0 0;
+}
+.ln-channel.ch-1-GUPSHUP:before {
+  background: url("./svg-channel/gupshup.svg") no-repeat 0 0;
+}
+.ln-channel.ch-1-MASIVIAN:before {
+  background: url("./svg-channel/masivian.svg") no-repeat 0 0;
+}
+.ln-channel.ch-1-SINCH:before {
+    background: url("./svg-channel/sinch.svg") no-repeat 0 0;
+}
+.ln-channel.channel-2-LYNN:before,
+.ln-channel.channel-3-LYNN:before,
+.ln-channel.channel-4-LYNN:before,
+.ln-channel.channel-8-LYNN:before,
+.ln-channel.channel-9-LYNN:before,
+.ln-channel.channel-10-LYNN:before,
+.ln-channel.channel-16-LYNN:before,
+.ln-channel.channel-18-LYNN:before,
+.ln-channel.channel-19-LYNN:before,
+.ln-channel.channel-20-LYNN:before,
+.ln-channel.channel-22-LYNN:before,
+.ln-channel.channel-23-LYNN:before,
+.ln-channel.channel-24-LYNN:before,
+.ln-channel.channel-25-LYNN:before {
+  display: none;
+}
+/* Channel Size */
+.ln-channel.xsm, .ln-channel.xsm:before {
+    width: 20px;
+    height: 20px;
+}
+.ln-channel.sm, .ln-channel.sm:before {
+    width: 25px;
+    height: 25px;
+}
+.ln-channel.lg, .ln-channel.lg:before {
+    width: 60px;
+    height: 60px;
+}
+.ln-channel.xlg, .ln-channel.xlg:before {
+    width: 80px;
+    height: 80px;
+}
+/* Channel Simulated, Not Disturb, Internal */
+.ln-channel.simulated:before {
+  filter: grayscale(100%);
+}
+.ln-channel.not-disturb:after,
+.not-disturb .ln-channel:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: url("./svg-channel/dnd.svg") no-repeat 0 0;
+  background-size: contain;
+}
+.ln-channel.sm.not-disturb:after,
+.not-disturb .ln-channel.sm:after {
+  width: 25px;
+  height: 25px;
+}
+.ln-channel.lg.not-disturb:after,
+.not-disturb .ln-channel.lg:after {
+  width: 60px;
+  height: 60px;
+}
+.ln-channel.internal:before {
+  width: 25px;
+  height: 25px;
+}
+.ln-channel.internal:after {
+    content: "";
+    margin: auto;
+    opacity: 0.8;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    background: url("./svg-channel/internal.svg") no-repeat 0 0;
+    background-size: contain;
+}
+/* Context */
+.ln-context {
+  position: relative;
+  display: inline-block;
+  text-indent: -9999px;
+  width: 20px;
+  height: 20px;
+}
+.ln-context:before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+}
+.ln-context.ctx-0:before {
+    background: url("./svg-channel/ctx-default.svg") no-repeat 0 0;
+}
+.ln-context.ctx-1:before {
+    background: url("./svg-channel/ctx-watson.svg") no-repeat 0 0;
+}
+.ln-context.ctx-2:before {
+    background: url("./svg-channel/ctx-luis.svg") no-repeat 0 0;
+}
+.ln-context.ctx-3:before {
+    background: url("./svg-channel/ctx-google.svg") no-repeat 0 0;
+}
+.ln-context.ctx-4:before {
+    background: url("./svg-channel/ctx-nlu.svg") no-repeat 0 0;
+}
+.ln-context.ctx-5:before {
+    background: url("./svg-channel/ctx-dialogflow.svg") no-repeat 0 0;
+}
+.ln-context.ctx-6:before {
+    background: url("./svg-channel/ctx-nlu.svg") no-repeat 0 0;
+}
+/* Context  Size */
+.ln-context.sm, .ln-context.sm:before {
+    width: 15px;
+    height: 15px;
+}
+.ln-context.lg, .ln-context.lg:before {
+    width: 30px;
+    height: 30px;
+}
+/* -------------------- */
+/* LMC */
+.ln-lmc {
+    position: relative;
+    display: inline-block;
+    text-indent: -9999px;
+    width: 20px;
+    height: 20px;
+}
+.ln-lmc:before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+}
+.ln-lmc.flame:before {
+    background: url("./svg-channel/flame.svg") no-repeat 0 0;
+}
+/* LMC  Size */
+.ln-lmc.sm, .ln-lmc.sm:before {
+    width: 15px;
+    height: 15px;
+}
+.ln-lmc.lg, .ln-lmc.lg:before {
+    width: 30px;
+    height: 30px;
+}
+/* -------------------- */
+/* Deploy */
+.ln-deploy {
+    position: relative;
+    display: inline-flex;
+    text-indent: -9999px;
+    width: 25px;
+    height: 25px;
+    filter: opacity(0.60);
+}
+.orgchartpap .circulo-n1:hover .ln-deploy,
+.ln-deploy:hover {
+    filter: opacity(1);
+}
+.ln-deploy:before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+}
+.ln-deploy.disabled {
+    filter: grayscale(0.80);
+}
+.ln-deploy.tenant:before {
+    background: url("./svg-channel/pap-tenant.svg") no-repeat 0 0;
+}
+.ln-deploy.lmc:before, 
+.ln-deploy.lmc-lmc:before {
+    background: url("./svg-channel/pap-lmc.svg") no-repeat 0 0;
+}
+.ln-deploy.workgroup:before, 
+.ln-deploy.lmc-wg:before {
+    background: url("./svg-channel/pap-workgroup.svg") no-repeat 0 0;
+}
+.ln-deploy.skill:before, 
+.ln-deploy.lmc-skill:before {
+    background: url("./svg-channel/pap-skill.svg") no-repeat 0 0;
+}
+.ln-deploy.agents:before, 
+.ln-deploy.lmc-agents:before {
+    background: url("./svg-channel/pap-agents.svg") no-repeat 0 0;
+}
+.ln-deploy.flujo:before, 
+.ln-deploy.fw-flujo:before {
+    background: url("./svg-channel/pap-flujo.svg") no-repeat 0 0;
+}
+.ln-deploy.intent:before {
+    background: url("./svg-channel/pap-intent.svg") no-repeat 0 0;
+}
+.ln-deploy.cases:before {
+    background: url("./svg-channel/pap-case.svg") no-repeat 0 0;
+}
+.ln-deploy.actions:before, 
+.ln-deploy.fw-actions:before {
+    background: url("./svg-channel/pap-action.svg") no-repeat 0 0;
+}
+.ln-deploy.entity:before,
+.ln-deploy.fw-entity:before {
+    background: url("./svg-channel/pap-entity.svg") no-repeat 0 0;
+}
+.ln-deploy.config:before,
+.ln-deploy.fw-conf:before {
+    background: url("./svg-channel/pap-config.svg") no-repeat 0 0;
+}
+.ln-deploy.users:before,
+.ln-deploy.users-users:before {
+    background: url("./svg-channel/pap-users.svg") no-repeat 0 0;
+}
+.ln-deploy.widget:before {
+    background: url("./svg-channel/pap-widget.svg") no-repeat 0 0;
+}
+.ln-deploy.cognitive:before,
+.ln-deploy.cg-cognitive:before {
+    background: url("./svg-channel/pap-cognitive.svg") no-repeat 0 0;
+}
+.ln-deploy.campaign:before,
+.ln-deploy.cg-campaign:before {
+    background: url("./svg-channel/pap-campaign.svg") no-repeat 0 0;
+}

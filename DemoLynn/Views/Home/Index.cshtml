@@ -2,342 +2,360 @@
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+    .k-card {
+        border-color: white;
+    }
+
+    .k-list-optionlabel{
+        font-size: 170%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .k-list-item.k-selected, .k-selected.k-list-optionlabel {
+        color: #ffffff;
+        background-color: black;
+        font-size: 170%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .k-list-optionlabel.k-selected:hover {
+        background-color: rgba(0, 0, 0, 0.30);
+        color: black;
+        box-shadow: none;
+        border-color: none;
+        font-size: 170%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .k-input-solid:focus-within {
+        border-color: black;
+        box-shadow: none;
+    }
+
+    .k-list-item.k-selected.k-focus.k-hover{
+        background-color: rgba(0, 0, 0, 0.30);
+        color: black;
+        box-shadow: none;
+        border-color: none;
+        font-size: 170%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .k-popup {
+        border-radius: 4%;
+        border-color: black;
+        background-color: white;
+        box-shadow: none;
+    }
+    
+    .k-card-header {
+        flex: 0 0 auto;
+    }
+
+    .k-list-item{
+        color: black;
+        font-size: 170%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .k-card-body {
+        overflow: hidden;
+    }
+
+    .k-d-flex {
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .example-item {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        font-size: 170%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #loader-secondary {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #channels, #view-interface {
+/*         display: flex; */
+        justify-content: center;
+        align-items: center;
+    }
+
+    #forImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #type-of-service {
+/*         display: flex; */
+        justify-content: center;
+ /*        align-items: center; */
+    }
+    
+    #case1, #case2, #case3, #gmail-btn, #kyubo-btn, #ig-btn {
+        display: flex;
+        align-items: center; /* Alinea verticalmente */
+        justify-content: center; /* Alinea horizontalmente */
+        padding: 10px;
+        font-size: 170%;
+        color: black;
+        background-color: white;
+        border-radius: 6px;
+        height: 22%;
+    }
+
+    #gmail-btn, #kyubo-btn, #case1, .example-item, #ig-btn {
+        display: none;
+    }
+
+    .k-dropdownlist .k-input-inner {
+        background: white;
+        font-size: 170%;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 6px;
+        height: 30%;
+    }
+
+    .k-list-item { 
+        background-color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .gmail-icon, .kyubo-icon, .ig-icon{
+        margin-right: 8px;
+        
+    }
+
+    .close-image {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+    }
+
+    .close-image:hover,
+    .close-image:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
+    #phoneImage{
+        position: absolute;
+        z-index: 6;
+    }
+
+/*     .modal-interface {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 1;
+        top: 50%;
+        left: 25%;
+        background-color: rgba(0, 0, 0, 0.7);
+        height: 60%;
+        width: 50%;
+        }*/
+
+
+    .modal-interface{
+        visibility: hidden;
+    } 
+    .modal-interface{
+        position: relative;
+    }
+
+    .ex-interface-image {
+        position: absolute;
+        z-index: 4;
+        top: 50%;
+        left: 50%;
+        padding: 1em;
+        border-radius: 3%;
+        top: 50%;
+        left: 50%;
+    }
+
+    .black-out{
+        background-color: black;
+        z-index: 1;
+        height: 679px;
+        width: 334px;
+        border-radius: 12%;
+    }
+
+    .sending-video{
+        display: none;
+        position: absolute;
+        height: 679px;
+        width: 338px;
+        border-radius: 12%;
+        z-index: 3;
+    }
+
+    #gmailInbox{
+        display: none;
+        position: absolute;
+        height: 679px;
+        width: 338px;
+        border-radius: 12%;
+        z-index: 2;
+    }
+
+
+
+</style>
+
 
 
 <div id="example">
-    <div id="tilelayout"></div>
-
-    <!-- container text templates -->
-    <script id="conversion-rate" type="text/x-kendo-template">
-        <div"><img src="https://th.bing.com/th/id/OIP.tvQ8DaCbg31H-zZiuUXEhwHaLG?rs=1&pid=ImgDetMain" id="phoneImage"/></div>
-    </script>
-    <script id="current" type="text/x-kendo-template">
-        <div class="k-d-flex">
-            <div class="example-item k-flex-1">
-                <div>Loading</div>
-                <div id="loader-primary"></div>
-            </div>
+        <div class="modal-interface">
+            <image class="ex-interface-image" src="images/Interface.png"/>
+        <span class="close-image" id="for-close"><img src="images/close.png" style="height: 70px;" /></span>
         </div>
-    </script>
-    <script id="bounce-rate" type="text/x-kendo-template">
-        <button id="case1" style="width:100%">Caso de uso 1</button></br></br>
-        <button id="case2" style="width:100%">Caso de uso 2</button></br></br>
-        <button id="case3" style="width:100%">Caso de uso 3</button>
-    </script>
 
-    <!-- container chart templates -->
-    <script id="pages-chart-template" type="text/x-kendo-template">
-        <div id="pages-chart" style="height:100%; width:100%"></div>
-    </script>
-    <script id="views-chart-template" type="text/x-kendo-template">
-        <div id="views-chart" style="height:100%; width:100%">
+    <div id="tilelayout"></div>
+    <!-- container text templates -->
+    <script id="type-of-service-section" type="text/x-kendo-template">
+        <div id="type-of-service" style="width:100%">
             <input id="kd-place-chooser" />
         </div>
     </script>
-    <script id="visitors-chart-template" type="text/x-kendo-template">
-        <div id="visitors-chart" style="height:100%; width:100%"></div>
-    </script>
-    <script id="conversion-chart-template" type="text/x-kendo-template">
-        <div id="conversion-chart" style="height:100%; width:100%"></div>
-    </script>
-
-    <!-- container grid templates -->
-    <script id="conversions-grid-template" type="text/x-kendo-template">
-        <div id="conversions-grid" style="height:100%;">
-            <button id="primaryTextButton" style="width:100%"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/New_Logo_Gmail.svg" class="k-image" alt="gmail"/>Gmail</button>
+    <script id="mobile-interface" type="text/x-kendo-template">
+        <div id="forImage" style="height:100%" >
+            <div class="black-out"></div>
+            <video class="sending-video" id="sending-mail-video" src="images/casos_de_uso/gmail-kyubo/sending_email_all_the_video.mp4" frameborder="0"></video>
+            <img src="images/casos_de_uso/gmail-kyubo/gmail-inbox.png" id="gmailInbox"/>
+            <img src="images/iphone-bg.png" id="phoneImage" style="height:100%"/>
+        </div>
+    </script>   
+    <script id="loading-section" type="text/x-kendo-template">
+        <div class="k-d-flex">
+            <div class="example-item">
+                <div>Loading</div>
+                <div id="loader-secondary"></div>
+            </div>
         </div>
     </script>
-    <script id="users-grid-template" type="text/x-kendo-template">
+    <script id="view-interface-section" type="text/x-kendo-template">
+        <div id="view-interface" style="height:100%; width:100%">
+            <button id="kyubo-btn" style="width:100%"><img src="images/lynnicons-2024/lynnicons/svg-channel/kyubo.svg" style="height:100%" class="kyubo-icon" alt="kyubo"/>Kuybo</button>
+        </div>
+    </script>
+    <script id="channels-section" type="text/x-kendo-template">
+        <div id="channels" style="height:100%;">
+            <button id="gmail-btn" style="width:100%;"><img src="images/lynnicons-2024/lynnicons/svg-channel/gmail.svg" style="height:100%" class="gmail-icon" alt="gmail"/>Gmail</button></br></br>
+            @* <button id="ig-btn" style="width:100%;><img src="images/lynnicons-2024/lynnicons/svg-channel/instagram.svg" style="height:100%" class="ig-icon" alt="instagram"/>Instagram</button> *@
+        </div>
+    </script>
+    <script id="view-messages-section" type="text/x-kendo-template">
         <div id="users-grid" style="height:100%;"></div>
     </script>
+    <script id="use-cases" type="text/x-kendo-template">
+        <div>
+            <button id="case1" style="width:100%">Consulta sobre compra de equipo</button>
+        </div>
+    </script>
+
+
+
 
     <script>
+        var typeOfService = @Html.Raw(Json.Serialize(ViewBag.TypeOfService));
+        
+        console.log("Tipo de servicio: ", typeOfService)
+
         $("#tilelayout").kendoTileLayout({
             //Para tipo de servicio
             containers: [{
                 colSpan: 1,
                 rowSpan: 1,
-                // header: {
-                //     text: "Tipo de servicio"
-                // },
-                bodyTemplate: kendo.template($("#views-chart-template").html())
-                // < label for= "service" >Tipo de servicio< /label>
-                // < input id = "service" />
+                bodyTemplate: kendo.template($("#type-of-service-section").html())
+
             }, {
                 colSpan: 2,
                 rowSpan: 3,
-                // header: {
-                //     text: "Conversion Rate"
-                // },
-                bodyTemplate: kendo.template($("#conversion-rate").html())}, 
-            {
-                colSpan: 1,
-                rowSpan: 3,
-                // header: {
-                //     text: "Currently"
-                // },
-                bodyTemplate: kendo.template($("#current").html())
+                bodyTemplate: kendo.template($("#mobile-interface").html())
             }, {
                 colSpan: 1,
                 rowSpan: 3,
-                // header: {
-                //     text: "Most Visited Pages"
-                // },
-                bodyTemplate: kendo.template($("#pages-chart-template").html())
+                bodyTemplate: kendo.template($("#loading-section").html())
             }, {
                 colSpan: 1,
                 rowSpan: 1,
-                // header: {
-                //     text: "Conversions by Channel"
-                // },
-                bodyTemplate: kendo.template($("#conversions-grid-template").html())
+                bodyTemplate: kendo.template($("#view-interface-section").html())
             }, {
                 colSpan: 1,
                 rowSpan: 1,
-                // header: {
-                //     text: "Bounce Rate"
-                // },
-                bodyTemplate: kendo.template($("#bounce-rate").html())
-            }], //My changes
+                bodyTemplate: kendo.template($("#channels-section").html())
+            }, {
+                colSpan: 1,
+                rowSpan: 2,
+                bodyTemplate: kendo.template($("#view-messages-section").html())
+            }, {
+                colSpan: 1,
+                rowSpan: 1,
+                bodyTemplate: kendo.template($("#use-cases").html())
+            }],
+
+            gap: {
+                rows: 0,
+                columns: 0
+            },
+            
+
+
             columns: 5,
             columnsWidth: getWidth(),
             rowsHeight: 235,
-            reorderable: true,
-            resizable: true,
-            resize: function (e) {
-                var rowSpan = e.container.css("grid-column-end");
-                var chart = e.container.find(".k-chart").data("kendoChart");
-                // hide chart labels when the space is limited
-                if (rowSpan === "span 1" && chart) {
-                    chart.options.categoryAxis.labels.visible = false;
-                    chart.redraw();
-                }
-                // show chart labels when the space is enough
-                if (rowSpan !== "span 1" && chart) {
-                    chart.options.categoryAxis.labels.visible = true;
-                    chart.redraw();
-                }
+            // reorderable: true,
+            // resizable: true,
+            // resize: function (e) {
+            //     var rowSpan = e.container.css("grid-column-end");
+            //     var chart = e.container.find(".k-chart").data("kendoChart");
+            //     // hide chart labels when the space is limited
+            //     if (rowSpan === "span 1" && chart) {
+            //         chart.options.categoryAxis.labels.visible = false;
+            //         chart.redraw();
+            //     }
+            //     // show chart labels when the space is enough
+            //     if (rowSpan !== "span 1" && chart) {
+            //         chart.options.categoryAxis.labels.visible = true;
+            //         chart.redraw();
+            //     }
 
-                // for widgets that do not auto resize
-                https://docs.telerik.com/kendo-ui/styles-and-layout/using-kendo-in-responsive-web-pages
-                kendo.resize(e.container, true);
-            }
+            //     // for widgets that do not auto resize
+            //     https://docs.telerik.com/kendo-ui/styles-and-layout/using-kendo-in-responsive-web-pages
+            //     kendo.resize(e.container, true);
+            // }
         });
 
-        // var gridDs = new kendo.data.DataSource({
-        //     data: [
-        //         { channel: "Organic Search", conversion: 8232, users: 70500 },
-        //         { channel: "Direct", conversion: 6574, users: 24900 },
-        //         { channel: "Referral", conversion: 4932, users: 20000 },
-        //         { channel: "Social Media", conversion: 2928, users: 19500 },
-        //         { channel: "Email", conversion: 2456, users: 18100 },
-        //         { channel: "Other", conversion: 1172, users: 16540 },
-        //     ],
-        //     schema: {
-        //         model: {
-        //             fields: {
-        //                 conversion: { type: "number" },
-        //                 users: { type: "number" }
-        //             }
-        //         }
-        //     }
+        // $("#dropdownlist").kendoDropDownList({
+        //     fillMode: "outline"
+        //     popup: {
+        //         appendTo: $("#container"), // Adjunta el popup a un elemento específico
+
         // });
+        // function createCharts() {
+        // };
 
-        // $("#conversions-grid").kendoGrid({
-        //     dataSource: gridDs,
-        //     columns: [{
-        //         field: "channel", title: "Channel", width: 100
-        //     }, {
-        //         field: "conversion", title: "Conversion", format: "{0:n0}", width: 80
-        //     }],
-        // });
+        // $(document).bind("kendo:skinChange", createCharts);
 
-        // $("#users-grid").kendoGrid({
-        //     dataSource: gridDs,
-        //     columns: [{
-        //         field: "channel", title: "Channel", width: 100
-        //     }, {
-        //         field: "users", title: "Users", format: "{0:n0}", width: 80
-        //     }]
-        // });
-
-        function createCharts() {
-        //     var showLabels = $(document).width() > 677;
-
-        //     $("#views-chart").kendoChart({
-        //         dataSource: {
-        //             data: [
-        //                 { value: 2000, date: new Date(2020, 2, 30) },
-        //                 { value: 80000, date: new Date(2020, 3, 5) },
-        //                 { value: 130000, date: new Date(2020, 3, 10) },
-        //                 { value: 170000, date: new Date(2020, 3, 15) },
-        //                 { value: 190000, date: new Date(2020, 3, 20) },
-        //                 { value: 150000, date: new Date(2020, 3, 25) },
-        //                 { value: 160000, date: new Date(2020, 3, 30) }]
-        //         },
-        //         legend: {
-        //             visible: false
-        //         },
-        //         seriesDefaults: {
-        //             type: "line",
-        //             style: "smooth",
-        //             markers: {
-        //                 visible: false
-        //             }
-        //         },
-        //         series: [{
-        //             field: "value",
-        //             categoryField: "date"
-        //         }],
-        //         valueAxis: {
-        //             line: {
-        //                 width: 0
-        //             },
-        //             labels: {
-        //                 step: 2
-        //             },
-        //             min: 0,
-        //             max: 200000,
-        //         },
-        //         categoryAxis: {
-        //             baseUnit: "fit",
-        //             labels: {
-        //                 rotation: "auto",
-        //                 format: "{0:d MMMM}",
-        //                 visible: showLabels
-        //             },
-        //             majorGridLines: {
-        //                 visible: false
-        //             },
-        //             majorTicks: {
-        //                 visible: false
-        //             }
-        //         }
-        //     });
-
-        //     $("#pages-chart").kendoChart({
-        //         legend: {
-        //             visible: false
-        //         },
-        //         seriesDefaults: {
-        //             type: "column"
-        //         },
-        //         series: [{
-        //             data: [90000, 60000, 40000, 30000, 10000]
-        //         }],
-        //         valueAxis: {
-        //             line: {
-        //                 width: 0
-        //             },
-        //             labels: {
-        //                 step: 5
-        //             },
-        //             majorUnit: 10000,
-        //             min: 0,
-        //             max: 100000
-        //         },
-        //         categoryAxis: {
-        //             categories: ["Home", "Price", "Sign-up", "Product", "Blog"],
-        //             labels: {
-        //                 rotation: "auto",
-        //                 visible: showLabels
-        //             },
-        //             majorGridLines: {
-        //                 visible: false
-        //             },
-        //             majorTicks: {
-        //                 visible: false
-        //             }
-        //         }
-        //     });
-
-        //     $("#conversion-chart").kendoChart({
-        //         dataSource: {
-        //             data: [
-        //                 { value: 2000, date: new Date(2020, 3, 1) },
-        //                 { value: 80000, date: new Date(2020, 3, 5) },
-        //                 { value: 130000, date: new Date(2020, 3, 10) },
-        //                 { value: 170000, date: new Date(2020, 3, 15) },
-        //                 { value: 190000, date: new Date(2020, 3, 20) },
-        //                 { value: 190000, date: new Date(2020, 3, 30) }
-        //             ]
-        //         },
-        //         legend: {
-        //             visible: false
-        //         },
-        //         seriesDefaults: {
-        //             type: "line",
-        //             style: "smooth",
-        //             markers: {
-        //                 visible: false
-        //             }
-        //         },
-        //         series: [{
-        //             field: "value",
-        //             categoryField: "date"
-        //         }],
-        //         valueAxis: {
-        //             line: {
-        //                 width: 0
-        //             },
-        //             labels: {
-        //                 step: 2
-        //             },
-        //             min: 0,
-        //             max: 200000,
-        //         },
-        //         categoryAxis: {
-        //             baseUnitStep: "auto",
-        //             autoBaseUnitSteps: {
-        //                 days: [9]
-        //             },
-        //             labels: {
-        //                 rotation: "auto",
-        //                 format: "{0:d MMMM}",
-        //                 visible: showLabels
-        //             },
-        //             majorGridLines: {
-        //                 visible: false
-        //             },
-        //             majorTicks: {
-        //                 visible: false
-        //             }
-        //         }
-        //     });
-
-        //     $("#visitors-chart").kendoChart({
-        //         dataSource: {
-        //             data: [
-        //                 { value: 70, type: "New" },
-        //                 { value: 30, type: "Returning" },
-        //             ]
-        //         },
-        //         series: [{
-        //             type: "donut",
-        //             field: "value",
-        //             categoryField: "type",
-        //             startAngle: 70,
-        //             holeSize: 30
-        //         }],
-        //         legend: {
-        //             position: "bottom"
-        //         }
-        //     });
-
-        //     kendo.resize($(".k-grid"));
-        }
-
-        // $(document).ready(createCharts);
-        $(document).bind("kendo:skinChange", createCharts);
-
-        // function getHeight() {
-        //     const height = $(window).innerHeight() / 40;
-        //     if (height < 23) {
-        //         return 23;
-        //     } else {
-        //         return height;
-        //     }
-        // }
 
         function getWidth() {
             const width = $(window).innerWidth();
@@ -348,135 +366,146 @@
             }
         }
 
-        // $(function () {
-        //     $("#primaryTextButton").kendoButton({
-        //         imageUrl: "src=https://upload.wikimedia.org/wikipedia/commons/4/45/New_Logo_Gmail.svg"
-        //     });
-        // });
+        document.getElementById("gmail-btn").onclick = function () {
+            $('#case1').show();
+            $('#gmailInbox').show();
+
+        };
+
+
+
+        // document.getElementById("case2").onclick = function () {
+        //     $('.example-item, #kyubo-btn').show();
+        // };
+
+        // document.getElementById("case3").onclick = function () {
+        //     $('.example-item, #kyubo-btn').show();
+        // };
+
+        // var image = document.getElementById("#gmailInbox");
+        // var button = document.getElementById("#gmail-btn");
+
+        // button.onclick = function () {
+        //     image.style.visibility = "visible";
+
+        // }
+
+
+        var modal = document.getElementById("ex-interface");
+        var btn = document.getElementById("kyubo-btn");
+        var cls = document.getElementById("for-close");
+
+
+        btn.onclick = function () {
+            modal.style.visibility = "visible";
+        }
+
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.visibility = "hidden";
+            }
+        }
+
+        cls.onclick = function () {
+            modal.style.visibility = "hidden";
+
+        }
+
+
+        //---------PARA EL VIDEO-------------
+
+        // Tiempo en segundos desde el cual se desea iniciar la reproducción
+
+
+        // Cuando el video esté listo para reproducirse, establece el tiempo de inicio
+
+
+        // Opcional: Reproduce automáticamente el video desde el punto especificado
+        // video.addEventListener('canplay', function () {
+        //     video.play();
+        // }, false);
+        var startTime = 2; // 60 segundos = 1 minuto
+        var video = document.getElementById('sending-mail-video');
+
+        video.addEventListener('loadedmetadata', function () {
+            video.currentTime = startTime;
+        }, false);
+
+        document.getElementById("case1").onclick = function () {
+            $('.example-item, #kyubo-btn').show();
+            $('#gmailInbox').hide();
+            $('.sending-video').show();
+            $('.sending-video').each(function () {
+                var video = this;
+                video.play();
+
+                // Pausar el video después de 5 segundos de reproducción
+                setTimeout(function () {
+                    video.pause();
+
+                    // Reanudar el video después de 5 segundos de pausa
+                    setTimeout(function () {
+                        video.play();
+                    }, 5000); // 5000 milisegundos = 5 segundos
+                }, 5); // 5000 milisegundos = 5 segundos
+            });
+
+            var pauseTime = 2; // 60 segundos = 1 minuto
+            var video = document.getElementById('sending-mail-video');
+
+            video.addEventListener('loadedmetadata', function () {
+                video.currentTime = startTime;
+            }, false);
+
+
+        };
+
+ 
+
+ 
+
 
         //Para Drop Down list
+
         $(document).ready(function () {
+
+            function onSelect(e) {
+                console.log(e);
+                console.log(e.dataItem.text);
+                console.log(e.dataItem.value);
+                
+                $('#gmail-btn').show();
+            };
+
             var dataSource = new kendo.data.DataSource({
-                data: [
-                    { CityID: 1, CityName: "Lisboa" },
-                    { CityID: 2, CityName: "Moscow" },
-                    { CityID: 3, CityName: "Napoli" },
-                    { CityID: 4, CityName: "Tokyo" },
-                    { CityID: 5, CityName: "Oslo" },
-                    { CityID: 6, CityName: "Paris" },
-                    { CityID: 7, CityName: "Porto" },
-                    { CityID: 8, CityName: "Rome" },
-                    { CityID: 9, CityName: "Berlin" },
-                    { CityID: 10, CityName: "Nice" },
-                    { CityID: 11, CityName: "New York" },
-                    { CityID: 12, CityName: "Sao Paulo" },
-                    { CityID: 13, CityName: "Rio De Janeiro" },
-                    { CityID: 14, CityName: "Venice" },
-                    { CityID: 15, CityName: "Los Angeles" },
-                    { CityID: 16, CityName: "Madrid" },
-                    { CityID: 17, CityName: "Barcelona" },
-                    { CityID: 18, CityName: "Prague" },
-                    { CityID: 19, CityName: "Mexico City" },
-                    { CityID: 20, CityName: "Buenos Aires" }
-                ],
-                sort: { field: "CityName", dir: "asc" }
+                data: typeOfService,
+                sort: { field: "text", dir: "asc" }
             });
 
             $("#kd-place-chooser").kendoDropDownList({
                 filter: "contains",
-                optionLabel: 'Please select city...',
-                dataTextField: "CityName",
-                dataValueField: "CityID",
-                dataSource: dataSource
-            });
-
-            $("#primaryTextButton").kendoButton({
-                themeColor: "primary"
-
-
+                optionLabel: 'Tipo de servicio...',
+                fillMode: "None",
+                dataTextField: "text",
+                dataValueField: "value",
+                dataSource: dataSource,
+                select: onSelect
             });
 
 
 
-            $("#textButton,#case1,#case2,#case3").kendoButton();
-
-            // $("#primaryDisabledButton").kendoButton({
-            //     themeColor: "primary",
-            //     enable: false
-            // });
-
-            $("#disabledButton").kendoButton({
-                enable: false
-            });
-
-            $("#iconTextButton").kendoButton({
-                icon: "filter"
-            });
-
-            $("#kendoIconTextButton").kendoButton({
-                icon: "filter-clear"
-            });
-
-            $("#iconButton").kendoButton({
-                icon: "arrow-rotate-cw"
-            });
         });
         // PAra el loading
-        var primary = $('#loader-primary').kendoLoader({
-            themeColor: 'primary'
+        var primary = $('#loader-secondary').kendoLoader({
+            themeColor: 'secondary'
         }).data("kendoLoader");
 
-        $("#type").kendoDropDownList({
-            dataSource: ["pulsing", "infinite-spinner", "converging-spinner"],
-            change: function onChange(e) {
-                primary.setOptions({ type: e.sender.text() })
 
-            }
-        })
     </script>
 </div>
 
-<style>
-    .k-card-header {
-        flex: 0 0 auto;
-    }
 
-    .k-card-body {
-        overflow: hidden;
-    }
-
-/*     #phoneImage{
-        height: 100%;
-        width: 100%;
-    } */
-
-
-    .k-d-flex {
-        height: 100vh; 
-        justify-content: center; 
-        align-items: center; 
-        /* background-color: #f0f0f0;  */
-    }
-
-    .example-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        justify-content: center; 
-        text-align: center;
-        padding: 20px;
-        /* border: 1px solid #ccc;  */
-        border-radius: 5px; 
-        background-color: #ffffff;
-    }
-
-    #loader-primary {
-        margin-top: 20px; 
-        height: 50px;
-        width: 50px;
-    }
-    
-</style>
 
 
 
