@@ -21,8 +21,13 @@ namespace DemoLynn.Controllers
             Dictionary<int, string> typeOfService = new Dictionary<int, string>()
             {
                 { 1, "Telefonía Móvil" },
-                
+
             };
+
+            //using (var context = new DEMOLYNNContext())
+            //{
+            //    var _typeOfService = context.Businesses.ToList();
+            //}
 
             SelectList selTypeOfService = new SelectList(typeOfService, "Key", "Value");
             ViewBag.TypeOfService = selTypeOfService;

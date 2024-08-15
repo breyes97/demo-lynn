@@ -1,4 +1,17 @@
+
+
+using DemoLynn.Models;
+using DemoLynn.Models.InternalModel;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Se configura el DbContext [DemoLynn] y la Connection String [DemoLynn]
+builder.Services.AddDbContext<DEMOLYNNContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DemoLynn")));
+
+ConnectionStrings.Provider = builder.Configuration.GetSection("ConnectionStrings");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
