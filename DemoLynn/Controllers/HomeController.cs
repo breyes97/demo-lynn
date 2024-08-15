@@ -2,6 +2,7 @@ using DemoLynn.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
+using System.Linq;
 
 
 namespace DemoLynn.Controllers
@@ -18,23 +19,35 @@ namespace DemoLynn.Controllers
 
         public IActionResult Index()
         {
-            Dictionary<int, string> typeOfService = new Dictionary<int, string>()
-            {
-                { 1, "Telefonía Móvil" },
-
-            };
+            var typeOfService = new Dictionary<Guid, string>();
 
             try
             {
                 using (var context = new DEMOLYNNContext())
                 {
-                    var _typeOfService = context.Businesses.ToList();
+                    typeOfService = context.Businesses.ToDictionary(b => b.Id, b => b.Name);
+
+                    //var test = context.Businesses.FirstOrDefault();
+
+                    //var er = test.Name;
+
+                    //var test2 = context.Businesses.OrderBy(b => b.Name).LastOrDefault();
+                    //var test3 = context.Businesses.Where(b => b.Name == "HOPSPITGAL");
+
+                    //var hospitales = test3.Where(h => h.Name.Contains("Pinar"));
+
+
+
+                    //var test4 = context.Businesses.Where(b => b.Name.StartsWith("H")).ToList();
+
+                    //var y = test4.Where(h => h.Name.Contains("Pinar"));
+
+                    //var test5 = context.Businesses.Where(b => b.Name.Contains("H")).Select(c => c.Id).ToList();
+
                 }
             }
-            catch (Exception ex)
-            {
-
-            }
+            catch
+            {}
             
 
             SelectList selTypeOfService = new SelectList(typeOfService, "Key", "Value");
