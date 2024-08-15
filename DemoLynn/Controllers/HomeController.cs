@@ -24,10 +24,18 @@ namespace DemoLynn.Controllers
 
             };
 
-            //using (var context = new DEMOLYNNContext())
-            //{
-            //    var _typeOfService = context.Businesses.ToList();
-            //}
+            try
+            {
+                using (var context = new DEMOLYNNContext())
+                {
+                    var _typeOfService = context.Businesses.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
 
             SelectList selTypeOfService = new SelectList(typeOfService, "Key", "Value");
             ViewBag.TypeOfService = selTypeOfService;
